@@ -1,0 +1,36 @@
+<html>
+<head>
+	<title>Silex Test</title>
+
+	<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Usuario</th>
+					<th>Clave</th>
+					<th>Rol</th>
+					<th>Activo</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for user in users %}
+				<tr>
+					<td>{{ user.id }}</td>
+					<td>{{ user.usuario }}</td>
+					<td>{{ user.clave }}</td>
+					<td>{{ user.rol }}</td>
+					<td>{{ user.activo ? 'Si' : 'No' }}</td>
+					<td><a class="btn btn-primary" href="users/edit/{{ user.id }}">Editar</a></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>
